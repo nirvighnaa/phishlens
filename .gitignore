@@ -1,0 +1,31 @@
+﻿# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+
+# Environment variables — NEVER commit real secrets
+.env
+backend/.env
+frontend/.env
+
+# Node
+node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Database
+*.db
+*.sqlite3
+
+# ML artifacts (can be large / regenerable)
+backend/app/ml/model/*.joblib
+backend/app/ml/model/*.pkl
+
+# OS/editor
+.DS_Store
+.vscode/
+*.log
