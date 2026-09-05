@@ -1,17 +1,12 @@
 from fastapi import FastAPI
 
+from app.api.routes import health
+from app.core.config import settings
+
 app = FastAPI(
-    title="PhishLens API",
+    title=settings.APP_NAME,
     description="AI-assisted phishing URL detection and analysis platform.",
-    version="0.1.0",
+    version=settings.APP_VERSION,
 )
 
-
-@app.get("/api/health")
-def health_check():
-    """
-    Simple liveness check.
-    Returns a fixed status so we can confirm the server is running
-    before any real business logic exists.
-    """
-    return {"status": "ok", "service": "PhishLens API"}
+app.include_router(health.router, prefix="/api", tags=["Health"])
