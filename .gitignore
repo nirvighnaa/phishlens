@@ -7,7 +7,7 @@ venv/
 env/
 *.egg-info/
 
-# Environment variables — NEVER commit real secrets
+# Environment variables - NEVER commit real secrets
 .env
 backend/.env
 frontend/.env
@@ -24,6 +24,12 @@ frontend/.vite/
 # ML artifacts (can be large / regenerable)
 backend/app/ml/model/*.joblib
 backend/app/ml/model/*.pkl
+
+# Dataset files (large, regenerable - see README for download instructions)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
 
 # OS/editor
 .DS_Store
